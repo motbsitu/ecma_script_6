@@ -1,0 +1,14 @@
+{
+  "name": "ecmascript6",
+  "version": "1.0.0",
+  "description": "testing-webpack",
+  "main": "node-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julie S Mike",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^6.2.10"
+  }
+}
