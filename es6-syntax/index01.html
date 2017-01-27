@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css"/>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+	// var x = 10;
+	// if(x) {
+	// 	let x = 4;
+	// }
+	// console.log(x);
+
+//use let so it doesn't reassign the value of i each time through loop - block scoping
+		for(let i = 0; i<45; i++){
+			var div = document.createElement('div');
+			div.onclick = function(){
+				alert("You clicked on box #" + i);
+			};
+			document.getElementsByTagName('section')[0].appendChild(div);
+		}
+
+//template string examples:
+		function print (firstName){
+			console.log(`Hello ${firstName}`);
+		}
+
+		function createEmail(firstName, purchasePrice){
+			var shipping = 5.95;
+			console.log(
+				`Hi ${firstName}, thanks for buying from us!
+					Total: $${purchasePrice}
+					Shipping: $${shipping}
+					Grand Total: $${purchasePrice + shipping}
+					`
+			);
+		}
+			print("Julie");
+			createEmail("Julie", 100);
+//end template strings
+
+//spread operator
+
+	var cats = ["tabby", "siamese", "persian"];
+	var dogs = ["golden retriever", "pug", "schauzer"];
+
+	var animals = ["Whale", "Giraffe", "Snake", ...cats, ...dogs];
+
+	console.log(animals);
+
+
+	</script>
+	<title>ES6 Syntax</title>
+</head>
+<body>
+	<header>
+		<h1>Click on box</h1>
+	</header>
+	<section></section>
+</body>
+</html>
