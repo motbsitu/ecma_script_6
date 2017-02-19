@@ -13,3 +13,6 @@ Shorten and simplify Object Literals
 ##Arrow function
 AKA Fat Arrow function
 - don't need 'function' keyword or curly braces
+
+##Destructuring
+- extract data from arrays and objects

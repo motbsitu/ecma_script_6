@@ -15,6 +15,49 @@
 
 	studentLists(["Joes", "Cindys", "Jeannes"]);
 
+
+//bring this into scope
+	// var person = {
+	// 	first: "Doug",
+	// 	actions: ['bike', 'hike', 'ski', 'surf'],
+	// 	printActions: function(){
+	// 		var _this = this;
+	// 		this.actions.forEach(function(action){
+	// 			var str = _this.first + " likes to " + action;
+	// 			console.log(str);
+	// 		});
+	// 	}
+	// };
+	// person.printActions();
+
+//use bind to bring into scope
+	// var person = {
+	// 	first: "Doug",
+	// 	actions: ['bike', 'hike', 'ski', 'surf'],
+	// 	printActions: function(){
+	// 		this.actions.forEach(function(action){
+	// 			var str = this.first + " likes to " + action;
+	// 			console.log(str);
+	// 		}.bind(this));
+	// 	}
+	// };
+	// person.printActions();
+
+//update to arrow function
+	var person = {
+		first: "Doug",
+		actions: ['bike', 'hike', 'ski', 'surf'],
+		printActions(){
+			this.actions.forEach(action =>{
+				var str = this.first + " likes to " + action;
+				console.log(str);
+			});
+		}
+	};
+	person.printActions();
+
+
+
 	</script>
 	<title>Arrow Functions</title>
 </head>
