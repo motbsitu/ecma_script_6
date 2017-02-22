@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.js"></script>
+	<script type="text/babel">
+    function* director(){
+      yield "three";
+      yield "two";
+      yield "one";
+      yield "action";
+    }
+
+    var action = director();
+
+    console.log(action.next().value);
+    console.log(action.next().value);
+    console.log(action.next().value);
+    console.log(action.next().value);
+    console.log(action.next().value);
+
+
+    function * eachItem(arr){
+      for (var i=0; i<arr.length; i++){
+        //yield to the item in the array, value from that position
+        yield arr[i];
+      }
+    }
+    var letters = eachItem(['a', 'b', 'c', 'd', 'e', 'f', 'g']);
+    var abcs = setInterval(function(){
+      var letter = letters.next();
+      //if done is true, no more letters, then
+      if(letter.done){
+        clearInterval(abcs);
+        console.log("now I know my ABC's");
+      }else{
+        console.log(letter.value);
+      }
+      //advance every 500 miliseconds
+    }, 500);
+
+	</script>
+	<title>Generators</title>
+</head>
+<body>
+</body>
+</html>

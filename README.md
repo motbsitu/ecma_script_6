@@ -16,3 +16,10 @@ AKA Fat Arrow function
 
 ##Destructuring
 - extract data from arrays and objects
+
+##Generators
+- pause functions in the middle of execution to be resumed later
+- * following function keyword
+
+##Class Syntax
+- create constructor
