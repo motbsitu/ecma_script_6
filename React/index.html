@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
+    <title>React.js and ES6 Classes</title>
+<script type="text/babel">
+
+  //ES5 way
+  // var Restaurant = React.createClass({
+  //   render: function(){
+  //     return (<div>
+  //         <h1>{this.props.name}</h1>
+  //     </div>)
+  //   }
+  // });
+  //
+  // React.render(<Restaurant name="Fun Time Restaurant"></Restaurant>, document.body);
+
+//ES6 classes
+  class Restaurant extends React.Component{
+    //create status in class with constructor
+    constructor(){
+      super();
+      this.state = {
+        status: "not open"
+      };
+      //bind this keyword
+      this.openRestaurant = this.openRestaurant.bind(this);
+      this.closeRestaurant = this.closeRestaurant.bind(this);
+
+    }
+    //create method to change state/status
+    openRestaurant(){
+      this.setState({
+        status: "open"
+      });
+    }
+    closeRestaurant(){
+      this.setState({
+        status: "not open"
+      });
+    }
+    render(){
+      return (<div>
+          <h1>{this.props.name}</h1>
+          <p>The restaurant is {this.state.status}.</p>
+          <button onClick={this.openRestaurant}>Open Restaurant</button>
+          <button onClick={this.closeRestaurant}>Close Restaurant</button>
+      </div>)
+    }
+  }
+  React.render(<Restaurant name="Fun Time Restaurant"></Restaurant>, document.body);
+
+
+
+</script>
+
+</head>
+  <body>
+
+
+  </body>
+</html>
